@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import Xin from './assets/images/xiaoxin.jpg'
+import { Button } from 'antd';
 import './assets/css/App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         >
           Learn Test
         </a>
+        <Button type="primary">Button</Button>
       </header>
     </div>
   );
