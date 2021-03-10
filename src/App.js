@@ -1,82 +1,33 @@
-// import logo from './logo.svg';
-import Xin from './assets/images/xiaoxin.jpg'
-import { Button } from 'antd';
 import './assets/css/App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Redirect,
 } from "react-router-dom";
-import AuthExample from './AuthExample'
+import Login from './pages/User/Login'
+import Home from './pages/Home/Home'
+import Fail from './pages/Fail/404'
 
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={Xin} className="App-logo" alt="logo" />
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn Test
-    //     </a>
-    //     <Button type="primary">Button</Button>
-    //   </header>
-    // </div>
-    // <Router>
-    //   <div>
-    //     <ul>
-    //       <li>
-    //         <Link to="/">Home</Link>
-    //       </li>
-    //       <li>
-    //         <Link to="/about">About</Link>
-    //       </li>
-    //       <li>
-    //         <Link to="/dashboard">Dashboard</Link>
-    //       </li>
-    //     </ul>
-    //   </div>
-    //   <hr></hr>
-    //   <Switch>
-    //     <Route exact path="/">
-    //       <Home />
-    //     </Route>
-    //     <Route path="/about">
-    //       <About />
-    //     </Route>
-    //     <Route path="/dashboard">
-    //       <Dashboard />
-    //     </Route>
-    //   </Switch>
-    // </Router>
-    <AuthExample></AuthExample>
-  );
-}
-
-function Home() {
-  return (
     <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Redirect to='/loginIn'></Redirect>
+          </Route>
+          <Route path='/loginIn'>
+            <Login></Login>
+          </Route>
+          <Route path='/home'>
+            <Home></Home>
+          </Route>
+          <Route path='*'>
+            <Fail></Fail>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

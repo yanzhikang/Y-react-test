@@ -1,0 +1,16 @@
+ .logo {
+     height: 32px;
+     margin: 16px;
+     /* background: rgba(255, 255, 255, 0.3); */
+     background: url(../../assets/images/xiaoxin.jpg);
+ }
+
+ .site-layout .site-layout-background {
+     background: #fff;
+ }
+
+ .y-Header{
+     padding: 0 0 0 16px;
+     font-size: 20px;
+     font-weight: bold;
+ }
