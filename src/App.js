@@ -10,7 +10,7 @@ import Fail from "./pages/Fail/404";
 function App() {
 	return (
 		<div>
-			{/* <Router> */}
+			<Router>
 				<Switch>
           <Route exact path='/'>
             <Redirect to='/login'></Redirect>
@@ -33,7 +33,7 @@ function App() {
 						<Fail></Fail>
 					</Route>
 				</Switch>
-			{/* </Router> */}
+			</Router>
 		</div>
 	);
 }

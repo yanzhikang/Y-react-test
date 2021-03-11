@@ -1,8 +1,11 @@
 [react-router](https://reactrouter.com/web/guides/quick-start)  
 [react](https://react.docschina.org/docs/getting-started.html)  
+[ts](https://www.tslang.cn/index.html)  
 
 + react 17.x  
 + react-router-dom 5.x
++ react-router-config
+
 
 ***
 ## 需要学习的
