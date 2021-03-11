@@ -1,0 +1,9 @@
+.y-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.y-Header-loginout{
+    cursor: pointer;
+}

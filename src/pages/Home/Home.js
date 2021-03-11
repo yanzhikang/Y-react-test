@@ -1,10 +1,7 @@
 export default function Home() {
 	return (
 		<>
-			<p>Card content</p>
-			<p>Card content</p>
-			<p>Card content</p>
-      home
+		欢迎进入Yanzhi！
 		</>
 	);
 }
