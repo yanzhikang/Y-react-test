@@ -26,16 +26,16 @@ function YSider(props) {
       <Sider collapsible onCollapse={onCollapse}>
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" onClick={clickMenuItem}>
-          <Menu.Item key="/home/home" icon={<PieChartOutlined />} >
+          <Menu.Item key="/home" icon={<PieChartOutlined />} >
             首页
                 </Menu.Item>
           <SubMenu key="sub1" icon={<UserOutlined />} title="功能清单">
-            <Menu.Item key="/home/test1">test1</Menu.Item>
-            <Menu.Item key="/home/test2">test2</Menu.Item>
+            <Menu.Item key="/test1">test1</Menu.Item>
+            <Menu.Item key="/test2">test2</Menu.Item>
           </SubMenu>
           <SubMenu key="sub2" icon={<TeamOutlined />} title="系统设置">
-            <Menu.Item key="6">菜单管理</Menu.Item>
-            <Menu.Item key="8">用户管理</Menu.Item>
+            <Menu.Item key="/menusManagement">菜单管理</Menu.Item>
+            <Menu.Item key="/usersManagement">用户管理</Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
