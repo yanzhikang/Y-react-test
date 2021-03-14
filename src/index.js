@@ -1,28 +1,36 @@
 import "./assets/css/reset.css";
+import './assets/css/FirstScreen.css'
+import "./assets/css/login.css";
 import "./assets/css/index.css";
-import React from "react";
+
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 
 import routes from "./routes/index";
-// import reportWebVitals from './reportWebVitals';
+import { store } from "./reducers";
 
-import { Provider } from 'react-redux';
-import { store } from './reducers';
+import FirstScreen from "./FirstScreen.js";
 
-import "./assets/css/App.css";
-import { BrowserRouter as Router } from "react-router-dom";
+// function listen() {
+// 	if (document.readyState == "complete") {
+		// 资源加载完成
+		ReactDOM.render(
+			<Provider store={store}>
+				<Router>{renderRoutes(routes)}</Router>
+			</Provider>,
+			document.getElementById("root")
+		);
+// 	} else {
+// 		// 资源加载中
+// 		ReactDOM.render(
+// 			<Router>
+// 				<Route path="/" component={FirstScreen} />
+// 			</Router>,
+// 			document.getElementById("root")
+// 		);
+// 	}
+// }
 
-ReactDOM.render(
-	<Provider store={store}>
-		<Router>
-			{renderRoutes(routes)}
-		</Router>
-	</Provider>,
-	document.getElementById("root")
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
+// document.onreadystatechange = listen;

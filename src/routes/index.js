@@ -7,62 +7,75 @@ import Login from "../pages/User/Login.tsx";
 import YLayout from "../pages/YLayout/YLayout";
 import Fail from "../pages/Fail/404";
 
-import Home from '@/pages/Home/Home'
+import Home from "@/pages/Home/Home";
 
-import MenusManagement from '@/pages/system/menusManagement'
-import UsersManagement from '@/pages/system/usersManagement'
+import MenusManagement from "@/pages/system/menusManagement";
+import UsersManagement from "@/pages/system/usersManagement";
 
 export default [
 	{
-		path: "/login",
+		path: "/",
 		exact: true,
 		component: Login,
 	},
 	{
-		path: '/',
-		// exact: true,
+		path: "/login",
+		component: Login,
+	},
+	{
+		path: "/layout",
 		component: YLayout,
 		routes: [
-			// {
-			// 	path: "/home", 
-			// 	exact:true,
-			// 	render: () => (
-			// 		<Redirect to={"/home/home"} />
-			// 	)
-			// },
 			{
-				path: "/home",
+				path: "/layout",
 				exact: true,
+				render: () => <Redirect to={"/layout/home"}></Redirect>,
+			},
+			{
+				path: "/layout/home",
 				component: Home,
 			},
 			{
-				path: "/test1",
-				exact: true,
+				path: "/layout/test1",
 				component: Test1,
 			},
 			{
-				path: "/test2",
-				exact: true,
+				path: "/layout/test2",
 				component: Test2,
 			},
+			// {
+			// 	path:"/layout/system",
+			// 	render: () => <Redirect to={"/layout/system/menusManagement"}></Redirect>,
+			// 	routes:[
+			// 		{
+			// 			path: "/layout/system/menusManagement",
+			// 			component: MenusManagement,
+			// 		},
+			// 		{
+			// 			path: "/layout/system/usersManagement",
+			// 			component: UsersManagement,
+			// 		},
+			// 	]
+			// },
 			{
-				path: '/menusManagement',
-				exact: true,
-				component: MenusManagement
+				path: "/layout/system/menusManagement",
+				component: MenusManagement,
 			},
 			{
-				path: '/usersManagement',
-				exact: true,
-				component: UsersManagement
-			}, 
+				path: "/layout/system/usersManagement",
+				component: UsersManagement,
+			},
 			{
-				path: '*',
-				component: Fail,
-			}
-		]
+				path: "*",
+				render: () => <Redirect to={"/layout/home"}></Redirect>,
+			},
+		],
 	},
 	{
-		path: "404",
-		component: Fail,
+		path: "*",
+		render: () => <Redirect to={"/"}></Redirect>,
 	},
 ];
+
+
+// https://github.com/dibaosong/react-knowledge/blob/master/package.json
