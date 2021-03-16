@@ -24,10 +24,12 @@ function YSider(props) {
 					<SubMenu key="sub1" icon={<UserOutlined />} title="功能清单">
 						<Menu.Item key="/layout/test1">test1</Menu.Item>
 						<Menu.Item key="/layout/test2">test2</Menu.Item>
+						<Menu.Item key="/layout/funcComponent">funcComponent</Menu.Item>
+						<Menu.Item key="/layout/classComponent">classComponent</Menu.Item>
 					</SubMenu>
 					<SubMenu key="sub2" icon={<TeamOutlined />} title="系统设置">
-						<Menu.Item key="/layout/menusManagement">菜单管理</Menu.Item>
-						<Menu.Item key="/layout/usersManagement">用户管理</Menu.Item>
+						<Menu.Item key="/layout/system/menusManagement">菜单管理</Menu.Item>
+						<Menu.Item key="/layout/system/usersManagement">用户管理</Menu.Item>
 					</SubMenu>
 				</Menu>
 			</Sider>

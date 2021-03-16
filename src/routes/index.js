@@ -1,4 +1,5 @@
 import React from "react";
+import loadable from '@/utils/loadable';
 import { asyncComponent as async } from '../utils/asyncComponent.js';
 import { Redirect } from "react-router-dom";
 
@@ -38,12 +39,20 @@ export default [
 			},
 			{
 				path: "/layout/test1",
-				component: () => import(/* webpackChunkName: "Test1" */ '../pages/test/Test1.tsx'),
+				component: loadable(() => import(/* webpackChunkName: "Test1" */ '../pages/test/Test1.tsx')),
 				// component: async(() => import(/* webpackChunkName: "Test1" */ '../pages/test/Test1.tsx')),
 			},
 			{
 				path: "/layout/test2",
 				component: async(() => import(/* webpackChunkName: "Test2" */ '../pages/test/Test2.tsx')),
+			},
+			{
+				path: "/layout/funcComponent",
+				component: loadable(() => import(/* webpackChunkName: "funcComponent" */ '../pages/test/funcComponent.jsx')),
+			},
+			{
+				path: "/layout/classComponent",
+				component: loadable(() => import(/* webpackChunkName: "classComponent" */ '../pages/test/classComponent.jsx')),
 			},
 			// {
 			// 	path:"/layout/system",
@@ -65,7 +74,7 @@ export default [
 			},
 			{
 				path: "/layout/system/usersManagement",
-				component: () => import(/* webpackChunkName: "UsersManagement" */  '@/pages/system/usersManagement.js')
+				component: loadable(() => import(/* webpackChunkName: "UsersManagement" */  '@/pages/system/usersManagement.js'))
 				// component: async(() => import(/* webpackChunkName: "UsersManagement" */  '@/pages/system/usersManagement.js'))
 			},
 			{
